@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import postRoutes from './routes/post.js';
+import postRoutes from './routes/posts.js';
 
 const app = express();
 
@@ -16,6 +16,6 @@ app.use('/posts', postRoutes);
 
 mongoose.connect(process.env.CONNECTION_URL)
     .then(res => console.log('connected to db'))
-    .catch(error => console.log(error.messages))
+    .catch(err => console.log(err.message))
 
     
